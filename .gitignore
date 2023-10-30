@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+#protect private information
+/Candle.UI.MVC/appsettings.json
+/Candle.UI.MVC/appsettings.json
