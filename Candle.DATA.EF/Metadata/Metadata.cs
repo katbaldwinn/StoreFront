@@ -73,7 +73,6 @@ namespace Candle.DATA.EF.Models
 
 		[DisplayFormat(NullDisplayText = "[N/A]")]
 		[StringLength(100)]
-		[DataType(DataType.)]
 		public string? Address { get; set; }
 
 		[StringLength(50)]
