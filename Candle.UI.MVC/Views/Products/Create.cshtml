@@ -1,54 +1,70 @@
 ﻿@model Candle.DATA.EF.Models.Product
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Product";
 }
 
-<h1>Create</h1>
-
-<h4>Product</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
-                <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductPrice" class="control-label"></label>
-                <input asp-for="ProductPrice" class="form-control" />
-                <span asp-validation-for="ProductPrice" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductName" class="control-label"></label>
-                <input asp-for="ProductName" class="form-control" />
-                <span asp-validation-for="ProductName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductDescription" class="control-label"></label>
-                <input asp-for="ProductDescription" class="form-control" />
-                <span asp-validation-for="ProductDescription" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="StatusId" class="control-label"></label>
-                <select asp-for="StatusId" class ="form-control" asp-items="ViewBag.StatusId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductImage" class="control-label"></label>
-                <input asp-for="ProductImage" class="form-control" />
-                <span asp-validation-for="ProductImage" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+<div class="breadcrumb-section breadcrumb-bg">
+     <div class="container">
+          <div class="row">
+               <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                         <h1>@ViewBag.Title</h1>
+                         <br />
+                    </div>
+               </div>
+          </div>
+     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="container">
+     <br />
+     <br />
+     <br />
+     <br />
+     <div class="row">
+          <div class="col-md-4">
+               <form asp-action="Create" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                         <label asp-for="CategoryId" class="control-label"></label>
+                         <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                    </div>
+                    <div class="form-group">
+                         <label asp-for="ProductPrice" class="control-label"></label>
+                         <input asp-for="ProductPrice" class="form-control" />
+                         <span asp-validation-for="ProductPrice" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                         <label asp-for="ProductName" class="control-label"></label>
+                         <input asp-for="ProductName" class="form-control" />
+                         <span asp-validation-for="ProductName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                         <label asp-for="ProductDescription" class="control-label"></label>
+                         <input asp-for="ProductDescription" class="form-control" />
+                         <span asp-validation-for="ProductDescription" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                         <label asp-for="StatusId" class="control-label"></label>
+                         <select asp-for="StatusId" class="form-control" asp-items="ViewBag.StatusId"></select>
+                    </div>
+                    <div class="form-group">
+                         <label asp-for="ProductImage" class="control-label"></label>
+                         <input asp-for="ProductImage" class="form-control" />
+                         <span asp-validation-for="ProductImage" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                         <input type="submit" value="Create" class="btn btn-primary" />
+                         <a asp-action="Index" id="custom-button">Back to Products</a>
+                    </div>
+               </form>
+               <br />
+          </div>
+     </div>
+
+     <div>
+     </div>
 </div>
 
 @section Scripts {

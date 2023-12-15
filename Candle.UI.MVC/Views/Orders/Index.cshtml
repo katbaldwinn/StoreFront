@@ -1,47 +1,65 @@
 ﻿@model IEnumerable<Candle.DATA.EF.Models.Order>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Orders";
 }
 
-<h1>Index</h1>
+<div class="breadcrumb-section breadcrumb-bg">
+     <div class="container">
+          <div class="row">
+               <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                         <h1>@ViewBag.Title</h1>
+                         <br />
+                              <p>
+                                  <a asp-action="Create">Create New Order</a>
+                              </p>
+                         
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.IsDelivery)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OrderPlaced)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsDelivery)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderPlaced)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.UserId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.OrderId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.OrderId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+
+<div class="container">
+     <br />
+     <table class="table table-hover table-borderless product_section">
+          <thead>
+               <tr>
+                    <th>
+                         @Html.DisplayNameFor(model => model.IsDelivery)
+                    </th>
+                    <th>
+                         @Html.DisplayNameFor(model => model.OrderPlaced)
+                    </th>
+                    <th>
+                         @Html.DisplayNameFor(model => model.User)
+                    </th>
+                    <th></th>
+               </tr>
+          </thead>
+          <tbody>
+               @foreach (var item in Model) {
+               <tr>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.IsDelivery)
+                    </td>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.OrderPlaced)
+                    </td>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.User.UserId)
+                    </td>
+                    <td>
+                         <a asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> |
+                         <a asp-action="Details" asp-route-id="@item.OrderId">Details</a> |
+                         <a asp-action="Delete" asp-route-id="@item.OrderId">Delete</a>
+                    </td>
+               </tr>
+               }
+          </tbody>
+     </table>
+</div>
+<br />

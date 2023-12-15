@@ -1,40 +1,56 @@
 ﻿@model Candle.DATA.EF.Models.Order
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Order";
 }
 
-<h1>Create</h1>
-
-<h4>Order</h4>
+<div class="breadcrumb-section breadcrumb-bg">
+     <div class="container">
+          <div class="row">
+               <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                         <h1>@ViewBag.Title</h1>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="UserId" class="control-label"></label>
-                <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsDelivery" /> @Html.DisplayNameFor(model => model.IsDelivery)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="OrderPlaced" class="control-label"></label>
-                <input asp-for="OrderPlaced" class="form-control" />
-                <span asp-validation-for="OrderPlaced" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+<div class="container">
+     <br />
+     <br />
+     <br />
+     <div class="row">
+          <div class="col-md-4 offset-4">
+               <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                         <label asp-for="UserId" class="control-label"></label>
+                         <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                    </div>
+                    <div class="form-group form-check">
+                         <label class="form-check-label">
+                              <input class="form-check-input" asp-for="IsDelivery" /> @Html.DisplayNameFor(model => model.IsDelivery)
+                         </label>
+                    </div>
+                    <div class="form-group">
+                         <label asp-for="OrderPlaced" class="control-label"></label>
+                         <input asp-for="OrderPlaced" class="form-control" />
+                         <span asp-validation-for="OrderPlaced" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                         <input type="submit" value="Create" class="btn btn-primary" />
+                         <a asp-action="Index" id="custom-button">Back to Orders</a>
+                    </div>
+               </form>
+          </div>
+     </div>
+     <br />
+     <br />
+     <br />
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

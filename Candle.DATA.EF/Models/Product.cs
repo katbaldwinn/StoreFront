@@ -18,8 +18,8 @@ namespace Candle.DATA.EF.Models
         public int StatusId { get; set; }
         public string? ProductImage { get; set; }
 
-        public virtual Category Category { get; set; } = null!;
-        public virtual StockStatus Status { get; set; } = null!;
+        public virtual Category? Category { get; set; }
+        public virtual StockStatus? Status { get; set; }
         public virtual ICollection<ProductOrder> ProductOrders { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace Candle.DATA.EF.Models
         public bool IsDelivery { get; set; }
         public DateTime OrderPlaced { get; set; }
 
-        public virtual UserDetail User { get; set; } = null!;
+        public virtual UserDetail? User { get; set; }
         public virtual ICollection<ProductOrder> ProductOrders { get; set; }
     }
 }
